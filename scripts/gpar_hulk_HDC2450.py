@@ -146,10 +146,10 @@ class setCommand:
         return sendData(command)
 
 
-class hdc2450(serialPort):
+class hdc2450:
     """docstring for hdc245."""
 
-    def __init__(self, ):
+    def __init__(self):
         SAFETYKEY = '321654987'
         baudRate  = 115200 
         serialPort = '/dev/serial0'
