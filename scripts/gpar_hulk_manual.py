@@ -1,13 +1,14 @@
 #!/usr/bin/env python2.7
+# -*- coding: utf-8 -*-
 
 import rospy
 from geometry_msgs.msg import Twist
 import sys,tty,termios
 
 class _Getch:
-'''
-Classe usada para pegar apenas um caractere do teclado
-'''
+    '''
+    Classe usada para pegar apenas um caractere do teclado
+    '''
     def __call__(self):
             fd = sys.stdin.fileno()
             old_settings = termios.tcgetattr(fd)
@@ -31,11 +32,11 @@ k = [None, None, None]
 ctr = 1
 
 def read_Keyboard(key):
-'''
-Lê qual seta foi apertada e retorna o valor dela
-ou None para a tecla espaço e -1 para qualquer
-outra tecla
-'''
+    '''
+    Lê qual seta foi apertada e retorna o valor dela
+    ou None para a tecla espaço e -1 para qualquer
+    outra tecla
+    '''
 
     if (key[0] == KEYCODE[0] and key[1] == KEYCODE[1]):
         return key[2]
@@ -45,10 +46,10 @@ outra tecla
         return -1
 
 def Move():
-'''
-Vê a leitura do teclado e escreve a variavel
-vel (velocidade linear e angular do motor)
-'''
+    '''
+    Vê a leitura do teclado e escreve a variavel
+    vel (velocidade linear e angular do motor)
+    '''
     rospy.init_node('hulk_manual_node', anonymous=True)
     velocity_publisher = rospy.Publisher('/hulk_move', Twist, queue_size=10)
     vel = Twist()
