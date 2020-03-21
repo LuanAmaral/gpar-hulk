@@ -1,4 +1,4 @@
-#!/usr/bin/env python3=
+#!/usr/bin/env python2.7
 
 import rospy
 from geometry_msgs.msg import Twist
@@ -79,23 +79,23 @@ vel (velocidade linear e angular do motor)
 
             if arow == KEYCODE_UP :
                     print ("up")
-                    vel.linear.x  =  0.2;
-                    vel.angular.z =  0.0;
+                    vel.linear.x  =  0.2
+                    vel.angular.z =  0.0
 
             elif arow == KEYCODE_DOWN:
                     print ("down")
-                    vel.linear.x  = -0.2;
-                    vel.angular.z =  0.0;
+                    vel.linear.x  = -0.2
+                    vel.angular.z =  0.0
 
             elif arow == KEYCODE_RIGHT:
                     print ("right")
-                    vel.linear.x  =  0.0;
-                    vel.angular.z =  0.2;
+                    vel.linear.x  =  0.0
+                    vel.angular.z =  0.2
 
             elif arow == KEYCODE_LEFT:
                     print ("left")
-                    vel.linear.x  =  0.0;
-                    vel.angular.z = -0.2;
+                    vel.linear.x  =  0.0
+                    vel.angular.z = -0.2
             else:
                     print ("not an arrow key!")
                     ctr = 1
